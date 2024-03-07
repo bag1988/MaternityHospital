@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  maternityhospital:
+    image: ${DOCKER_REGISTRY-}maternityhospital
+    build:
+      context: .
+      dockerfile: MaternityHospital/Dockerfile
+  postgres_db:
+    image: postgres:latest
+    container_name: PostgresCont 
+    restart: always
+    environment:
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres123 
+     
